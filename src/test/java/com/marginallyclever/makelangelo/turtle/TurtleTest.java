@@ -284,4 +284,19 @@ class TurtleTest {
             assertTrue(new Point2D(i * 100, 0).distance(turtle.interpolate(d*(double)i/10.0)) < EPSILON);
         }
     }
+
+    @Test
+    public void testRotate() {
+        // Arrange
+        Turtle turtle = new Turtle(Color.BLUE);
+        turtle.moveTo(10, 0);
+
+        // Act
+        turtle.rotate(90);
+
+        // Assert
+        TurtleMove lastMove = turtle.history.get(turtle.history.size() - 1);
+        assertEquals(0, lastMove.x, 0.01, "La coordonnée x devrait être 0 après une rotation de 90 degrés.");
+        assertEquals(10, lastMove.y, 0.01, "La coordonnée y devrait être 10 après une rotation de 90 degrés.");
+    }
 }
