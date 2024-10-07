@@ -1,5 +1,4 @@
 package com.marginallyclever.makelangelo.makeart.io;
-
 import org.json.JSONArray;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
