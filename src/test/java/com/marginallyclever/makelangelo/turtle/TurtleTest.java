@@ -287,6 +287,8 @@ class TurtleTest {
 
     @Test
     public void testRotate() {
+        // Intention : Vérifier que la rotation d'une tortue de 90 degrés transforme correctement les coordonnées.
+
         // Arrange
         Turtle turtle = new Turtle(Color.BLUE);
         turtle.moveTo(10, 0);

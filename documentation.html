@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation des Méthodes Testées</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h4 {
+            margin-top: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .method-section {
+            margin-bottom: 20px;
+        }
+        .coverage-images {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .coverage-images img {
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Documentation des Méthodes Testées</h1>
+<h1>Classe coverage total : </code></h1>
+<img src="img-documentation/coverage.png" alt="C">
+
+<h2>Classe <code>LoadScratch2</code></h2>
+
+<p><strong>Liens :</strong></p>
+<ul>
+    <li><a href="src/main/java/com/marginallyclever/makelangelo/makeart/io/LoadScratch2.java">Fichier de la Classe <code>LoadScratch2</code></a></li>
+    <li><a href="src/test/java/com/marginallyclever/makelangelo/makeart/io/LoadSratch2Test.java">Fichier de test <code>LoadScratch2Test</code></a></li>
+</ul>
+
+<h3>Méthodes Testées</h3>
+
+<div class="method-section">
+    <h4>1. <code>canLoad(String filename)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 54-58 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Détermine si un fichier donné peut être chargé en vérifiant si son extension est <code>.sb2</code>.</p>
+    <p><strong>Justification du Test :</strong> S'assure que seuls les fichiers Scratch 2 valides sont traités, évitant les erreurs lors du chargement.</p>
+    <p><strong>Nom du test :</strong> <code>testCanLoad()</code></p>
+</div>
+
+<div class="method-section">
+    <h4>2. <code>resolveBoolean(Object obj)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 224-256 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Évalue une expression booléenne, en gérant les opérations logiques telles que <code>and</code>, <code>or</code>, <code>not</code>, et les opérateurs de comparaison.</p>
+    <p><strong>Justification du Test :</strong> Crucial pour interpréter les structures de contrôle, Garantit que les expressions booléennes sont évaluées correctement pour contrôler le flux du programme.</p>
+    <p><strong>Noms des tests : (on a tester tout les cas possible)</strong></p>
+    <ul>
+        <li><code>testResolveBooleanGreaterThan()</code></li>
+        <li><code>testResolveBooleanLessThan()</code></li>
+        <li><code>testResolveBooleanEqual()</code></li>
+        <li><code>testResolveBooleanNot()</code></li>
+        <li><code>testResolveBooleanAnd()</code></li>
+        <li><code>testResolveBooleanOr()</code></li>
+        <li><code>testResolveBooleanParseError()</code></li>
+    </ul>
+</div>
+
+<div class="method-section">
+    <h4>3. <code>resolveValue(Object obj)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 258-364 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Résout un objet en une valeur numérique, en gérant les nombres, les chaînes, les variables et les expressions imbriquées.</p>
+    <p><strong>Justification du Test :</strong> Méthode essentielle pour évaluer les expressions et récupérer les valeurs des variables. Vérifie la résolution correcte des différents types de valeurs.</p>
+    <p><strong>Noms des tests :</strong></p>
+    <ul>
+        <li><code>testResolveValueWithStringNumber()</code></li>
+        <li><code>testResolveValueWithNumber()</code></li>
+        <li><code>testResolveValueWithJSONArray()</code></li>
+    </ul>
+</div>
+
+<div class="method-section">
+    <h4>4. <code>doCompute(Iterator&lt;?&gt; scriptIter)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 368-404 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Effectue des calculs mathématiques (par exemple, racine carrée, fonctions trigonométriques) basés sur un nom d'opération donné et un opérande.</p>
+    <p><strong>Justification du Test :</strong> Essentiel pour évaluer les fonctions mathématiques au sein des projets Scratch. Assure que les calculs mathématiques variés sont effectués avec précision.</p>
+    <p><strong>Nom du test :</strong> <code>testDoCompute()</code></p>
+</div>
+
+<div class="method-section">
+    <h4>5. <code>doAdd(Iterator&lt;?&gt; scriptIter)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 428-432 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Effectue l'addition entre deux nombres </p>
+    <p><strong>Justification du Test :</strong> Vérifie le bon fonctionnement de l'opération d'addition, essentielle pour évaluer les expressions Scratch.</p>
+    <p><strong>Nom du test :</strong> <code>testDoAdd()</code></p>
+</div>
+
+<div class="method-section">
+    <h4>6. <code>doSubtract(Iterator&lt;?&gt; scriptIter)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 434-438 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Effectue la soustraction entre deux nombres</p>
+    <p><strong>Justification du Test :</strong> Vérifie le bon fonctionnement de l'opération de soustraction, cruciale pour traiter les scripts Scratch.</p>
+    <p><strong>Nom du test :</strong> <code>testDoSubtract()</code></p>
+</div>
+
+<div class="method-section">
+    <h4>7. <code>doMultiply(Iterator&lt;?&gt; scriptIter)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 420-424 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Multiplie deux nombres</p>
+    <p><strong>Justification du Test :</strong> Assure la précision des opérations de multiplication dans l'interprétation des scripts Scratch.</p>
+    <p><strong>Nom du test :</strong> <code>testDoMultiply()</code></p>
+</div>
+
+<div class="method-section">
+    <h4>8. <code>doDivide(Iterator&lt;?&gt; scriptIter)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 414-418 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Divise un nombre par un autre.</p>
+    <p><strong>Justification du Test :</strong> Vérifie que les divisions, y compris les cas particuliers comme la division par zéro, sont traitées correctement.</p>
+    <p><strong>Nom du test :</strong> <code>testDoDivide()</code></p>
+</div>
+
+<div class="method-section">
+    <h4>9. <code>doModulus(Iterator&lt;?&gt; scriptIter)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 406-412 dans <code>LoadScratch2.java</code></p>
+    <p><strong>Description :</strong> Calcule le reste de la division de deux nombres.</p>
+    <p><strong>Justification du Test :</strong> Vérifie la mise en œuvre correcte de l'opération de modulo, utilisée dans de nombreux algorithmes.</p>
+    <p><strong>Nom du test :</strong> <code>testDoModulus()</code></p>
+</div>
+
+<div class="coverage-images">
+    <h4>Couverture Avant</h4>
+    <p>Avant l'ajout des tests/p>
+    <img src="img-documentation/load2-1.png" alt="Couverture avant">
+
+    <h4>Couverture Après</h4>
+    <p>Après l'ajout des tests</p>
+    <img src="img-documentation/load2.png" alt="Couverture après">
+</div>
+
+<hr>
+
+<h2>Classe <code>Turtle</code></h2>
+
+<p><strong>Liens :</strong></p>
+<ul>
+    <li><a href="src/main/java/com/marginallyclever/makelangelo/turtle/Turtle.java">Classe principale <code>Turtle</code></a></li>
+    <li><a href="src/test/java/com/marginallyclever/makelangelo/turtle/TurtleTest.java">Fichier de test <code>TurtleTest</code></a></li>
+</ul>
+
+<h3>Méthodes Testées</h3>
+
+<div class="method-section">
+    <h4>10. <code>rotate(double degrees)</code></h4>
+    <p><strong>Emplacement :</strong> Lignes 204-214 dans <code>Turtle.java</code></p>
+    <p><strong>Description :</strong> Applique une rotation de l'angle spécifié à l'ensemble des mouvements enregistrés par la tortue.</p>
+    <p><strong>Justification du Test :</strong> Essentiel pour les transformations géométriques des tracés de la tortue. Vérifie que les coordonnées sont correctement transformées après la rotation.</p>
+    <p><strong>Nom du test :</strong> <code>testRotate()</code></p>
+</div>
+
+<div class="coverage-images">
+    <h4>Couverture Avant</h4>
+    <p>Avant l'ajout du test</p>
+    <img src="img-documentation/turtle-1.png" alt="Couverture avant">
+
+    <h4>Couverture Après</h4>
+    <p>Après l'ajout du test</p>
+    <img src="img-documentation/turtle.png" alt="Couverture après">
+</div>
+
+<hr>
