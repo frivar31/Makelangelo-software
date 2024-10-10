@@ -80,7 +80,8 @@ public class LoadSratch2Test {
 
     @Test
     public void testResolveBooleanNot() throws Exception {
-        // Intention : Vérifier que la méthode resolveBoolean identifie correctement que la négation de '3 = 4' est vraie.
+        // Intention : Vérifier que la méthode resolveBoolean identifie correctement que la négation de '3 = 4' est vraie
+        // et la négation de 3 = 3 devrait être false .
 
         // Arrange
         JSONArray jsonArray = new JSONArray("[\"not\", [\"=\", 3, 4]]");
