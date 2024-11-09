@@ -24,9 +24,6 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Set JVM Flag
-        run: echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
-
       - name: Build and Test with Maven using JVM Flag
         env:
           MAVEN_OPTS: "${{ matrix.jvm_flag }}"
