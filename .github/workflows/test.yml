@@ -30,12 +30,11 @@ jobs:
         timeout-minutes: 15
         run: ./mvnw -B verify
 
-      - name: Get JaCoCo Coverage and Log Flag
+      - name: Get JaCoCo Coverage
         id: coverage  
         run: |
           coverage=$(python3 config/coverage.py target/site/jacoco/jacoco.csv) 
           echo "COVERAGE=$coverage" >> $GITHUB_ENV
-          echo "Coverage with flag ${{ matrix.jvm_flag }}: $coverage%"
 
       - name: Fail if coverage has not improved
         run: |
