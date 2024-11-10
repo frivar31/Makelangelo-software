@@ -24,11 +24,17 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
+      - name: Log JVM Flag
+        run: echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
+      
       - name: Build and Test with Maven using JVM Flag
         env:
           MAVEN_OPTS: "${{ matrix.jvm_flag }}"
         timeout-minutes: 15
         run: ./mvnw -B verify
+
+      - name: Log Coverage for Flag
+        run: echo "Coverage with flag ${{ matrix.jvm_flag }}: $COVERAGE%"
 
       - name: Get JaCoCo Coverage
         id: coverage  
