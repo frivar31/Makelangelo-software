@@ -23,17 +23,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
-
-      - name: Log JVM Flag
-        run: |
-          echo "Running with JVM flag: ${{ matrix.jvm_flag }}"
       
       - name: Build and Test with Maven using JVM Flag
         env:
           MAVEN_OPTS: "${{ matrix.jvm_flag }}"
         timeout-minutes: 15
         run: ./mvnw -B verify
-
+        
 
       - name: Get JaCoCo Coverage
         id: coverage  
@@ -52,6 +48,12 @@ jobs:
             echo "New coverage: $coverage%. Coverage is improved!"
           fi
           
-      - name: Log Coverage for Flag
+      - name: Log JVM Flag and Coverage
         run: |
-           echo "Coverage with flag ${{ matrix.jvm_flag }}: $COVERAGE%"
+           echo "Running with JVM flag: ${{ matrix.jvm_flag }}: $COVERAGE%"
+           
+      - name: Humour
+        run: |
+          echo "Parfois, j’aimerais un garbage collector dans ma tête… pour supprimer immédiatement certaines personnes lol. 🗑️💀😂😂"
+           
+           
