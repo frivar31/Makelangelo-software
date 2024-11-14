@@ -53,7 +53,7 @@ Ensuite, chaque flag est appliqué individuellement dans l’étape Build and Te
   run: ./mvnw -B verify
 ```
   
-Dans la section `jobs -> build -> steps`, j’ai ajouté une étape pour afficher le flag JVM actuellement utilisé et le taux de couverture des test comme demander:
+Dans la section `jobs -> build -> steps`, on a ajouté une étape pour afficher le flag JVM actuellement utilisé et le taux de couverture des test comme demander:
 ```yaml
 - name: Log JVM Flag and Coverage
   run: |
